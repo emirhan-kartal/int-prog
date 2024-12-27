@@ -1,0 +1,123 @@
+:root {
+    --primary-dark: #1e293b;
+    --primary-light: #e1e1e1;
+    --accent: #cfad72;
+}
+
+.navbar {
+    background-color: var(--primary-dark);
+    padding: 1rem 2rem;
+}
+
+.navbar-brand, .nav-link {
+    color: var(--primary-light) !important;
+    transition: color 0.3s ease;
+}
+
+    .nav-link:hover {
+        color: var(--accent) !important;
+    }
+
+.navbar-toggler {
+    border-color: var(--primary-light);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(225, 225, 225, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.btn-login {
+    background-color: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    margin-right: 1rem;
+}
+
+    .btn-login:hover {
+        background-color: var(--accent);
+        color: var(--primary-dark);
+    }
+
+.btn-register {
+    background-color: var(--accent);
+    border: 2px solid var(--accent);
+    color: var(--primary-dark);
+}
+
+    .btn-register:hover {
+        background-color: transparent;
+        color: var(--accent);
+    }
+
+.btn-app {
+    background-color: var(--accent);
+    color: var(--primary-dark);
+    border: 2px solid var(--accent);
+    padding: 0.5rem 1.5rem;
+}
+
+    .btn-app:hover {
+        background-color: transparent;
+        color: var(--accent);
+    }
+
+main {
+    min-height: calc(100vh - 160px);
+    padding: 2rem 0;
+}
+
+.btn-outline-primary {
+    color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+    .btn-outline-primary:hover {
+        background-color: var(--primary-dark);
+        color: var(--primary-light);
+    }
+
+/* Dropdown styles */
+.dropdown-menu {
+    background-color: var(--primary-dark);
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-item {
+    color: var(--primary-light);
+    padding: 0.5rem 1rem;
+}
+
+    .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--accent);
+    }
+
+    .dropdown-item.active,
+    .dropdown-item:active {
+        background-color: var(--accent);
+        color: var(--primary-dark);
+    }
+
+/* Make dropdown work on hover for desktop */
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Upload area styles */
+.upload-drop-zone {
+    border: 2px dashed var(--primary-dark);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+    .upload-drop-zone.drag-over {
+        background-color: rgba(30, 41, 59, 0.05);
+        border-color: var(--accent);
+    }
+
+.selected-file {
+    background-color: rgba(30, 41, 59, 0.05);
+}

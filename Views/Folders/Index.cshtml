@@ -1,0 +1,167 @@
+@{
+    ViewData["Title"] = "Welcome";
+    Layout = "_Layout";
+}
+
+<!-- Hero Section -->
+<section class="jumbotron text-center bg-primary text-white mb-0">
+    <div class="container">
+        <h1 class="display-4">Secure File Management Solution</h1>
+        <p class="lead">Store, organize, and share your files with ease and security</p>
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div class="mt-4">
+                <a asp-controller="Account" asp-action="Register" class="btn btn-light btn-lg mr-3 text-primary">
+                    Get Started
+                </a>
+                <a asp-controller="Account" asp-action="Login" class="btn btn-outline-light btn-lg">
+                    Sign In
+                </a>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-5 bg-secondary">
+    <div class="container">
+        <h2 class="text-center mb-5">Key Features</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <i class="fas fa-lock fa-3x mb-3 text-primary"></i>
+                        <h4 class="card-title text-primary">Secure Storage</h4>
+                        <p class="card-text text-dark">Your files are encrypted and stored securely in our cloud infrastructure.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <i class="fas fa-share-alt fa-3x mb-3 text-primary"></i>
+                        <h4 class="card-title text-primary">Easy Sharing</h4>
+                        <p class="card-text text-dark">Share files securely with anyone, even if they don't have an account.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <i class="fas fa-folder-open fa-3x mb-3 text-primary"></i>
+                        <h4 class="card-title text-primary">Organization</h4>
+                        <p class="card-text text-dark">Create folders and organize your files efficiently.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section id="pricing" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Simple Pricing</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow border-0">
+                    <div class="card-body text-center p-5">
+                        <h3 class="card-title text-primary">Free Plan</h3>
+                        <div class="display-4 my-4 text-primary">10GB</div>
+                        <ul class="list-unstyled text-left">
+                            <li class="mb-3"><i class="fas fa-check text-success mr-2"></i>Secure File Storage</li>
+                            <li class="mb-3"><i class="fas fa-check text-success mr-2"></i>File Sharing</li>
+                            <li class="mb-3"><i class="fas fa-check text-success mr-2"></i>Folder Organization</li>
+                        </ul>
+                        <a asp-controller="Account" asp-action="Register" class="btn btn-primary btn-lg mt-3">
+                            Sign Up Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-secondary">
+    <div class="container">
+        <h2 class="text-center mb-5">Contact Us</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow border-0">
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="form-group">
+                                <label class="text-primary">Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="text-primary">Email</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="text-primary">Message</label>
+                                <textarea class="form-control" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        // Any page-specific scripts can go here
+        $(document).ready(function () {
+            // Smooth scrolling for anchor links
+            $('a[href^="#"]').on('click', function (event) {
+                event.preventDefault();
+                var target = $(this.getAttribute('href'));
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 70
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+}
+
+<!-- Custom Styles -->
+<style>
+    /* Override Bootstrap primary color */
+    .bg-primary {
+        background-color: #1e293b !important;
+    }
+    .text-primary {
+        color: #1e293b !important;
+    }
+    .btn-primary {
+        background-color: #1e293b;
+        border-color: #1e293b;
+    }
+    .btn-primary:hover {
+        background-color: #163045;
+        border-color: #163045;
+    }
+    /* Secondary background */
+    .bg-secondary {
+        background-color: #e1e1e1 !important;
+    }
+    /* Third color */
+    .text-third {
+        color: #cfad72 !important;
+    }
+    /* Adjustments for card titles and text */
+    .card-title {
+        font-weight: bold;
+    }
+    .jumbotron {
+        padding: 4rem 2rem;
+    }
+
+</style>
